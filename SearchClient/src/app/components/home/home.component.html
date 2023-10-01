@@ -1,21 +1,21 @@
-<div class="container">
+<div class="container containerClass">
     <h1>Enter the user you want to search</h1>
     <form [formGroup]="myForm" (ngSubmit)="getSearchResults()">
       <div class="form-group">
-        <label for="keyword">Keyword</label>
         <input
           type="text"
           id="keyword"
-          class="form-control"
+          class="form-control inputClass"
           formControlName="keyword"   
           [(ngModel)]="text"      
+          placeholder="Enter keyword to search"
           required
         />
       </div>  
       <div style="color: red;" *ngIf="myForm.controls['keyword'].hasError('required') && (myForm.controls['keyword'].dirty || myForm.controls['keyword'].touched)">
         Please enter a keyword above
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary submitClass">Submit</button>
     </form>
   </div>
   <app-results></app-results>

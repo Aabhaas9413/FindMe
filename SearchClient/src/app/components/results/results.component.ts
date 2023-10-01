@@ -25,6 +25,7 @@ export class ResultsComponent {
       this.resultFound = true
     }else{
       this.resultFound = false;
+      this.userList = [];
     }    
    });
   }

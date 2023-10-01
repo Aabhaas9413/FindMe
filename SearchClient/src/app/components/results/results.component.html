@@ -1,4 +1,4 @@
-<div *ngIf="resultFound" >
+<div style="padding:1rem;" *ngIf="resultFound" >
     <hr>
   <h2>You have searched for : {{text}}</h2>
   <h3>Total count of records for this search is : {{totalCount}}</h3>
@@ -16,7 +16,7 @@
   
   </div>
   </div>
-  <div *ngIf="!resultFound">
+  <div style="padding:1rem;" *ngIf="!resultFound && text">
     <hr>
     <h1>No results have been found <span *ngIf="text"> for : {{text}}</span></h1>
     <hr>

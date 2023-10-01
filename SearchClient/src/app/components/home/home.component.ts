@@ -20,8 +20,15 @@ export class HomeComponent {
   }
 
   getSearchResults(){
-    if (this.myForm.valid) {
+    if (this.myForm.valid && this.myForm.value["keyword"].trim().length > 0) {
       this.resultsComponent.getUserListByKeyword(this.myForm.value["keyword"])
     }
+  else{
+    this.resultsComponent.text = "";
+    this.resultsComponent.userList = [];
+    this.resultsComponent.totalCount = 0;
+    this.resultsComponent.resultFound = false
+    alert("Please enter valid text in the search-box below.");
+  }
   }
 }
