@@ -1,7 +1,6 @@
 using DataAccess.Common.Interface;
 using DataAccess.Common.Models;
 using DataAccess.Services.SearchDataAccess;
-using Newtonsoft.Json;
 
 namespace DataAccessTests
 {

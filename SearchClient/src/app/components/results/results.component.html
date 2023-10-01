@@ -1,0 +1,24 @@
+<div *ngIf="resultFound" >
+    <hr>
+  <h2>You have searched for : {{text}}</h2>
+  <h3>Total count of records for this search is : {{totalCount}}</h3>
+  <hr>
+  <div class="row" >
+  <div *ngFor="let user of userList" class="card col-md-5 col-sm-5 col-lg-5" style="width: 20rem;padding: 2px;margin: 0px 1% 2% 5%;">
+      <div class="card-body">
+        <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+        <div class="card-text">
+         <div> Email : {{user.email}} </div>
+          <div> Gender : {{user.gender}}</div> 
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  </div>
+  <div *ngIf="!resultFound">
+    <hr>
+    <h1>No results have been found <span *ngIf="text"> for : {{text}}</span></h1>
+    <hr>
+  </div>
+  

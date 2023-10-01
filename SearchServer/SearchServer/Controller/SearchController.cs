@@ -33,7 +33,7 @@ namespace SearchServer.Controller
                 var results = data.GetSearchResults(keyword);
 
                 if (results == null) { return Results.NotFound(); }
-                return Results.Ok(results);
+                return Results.Ok(results.Result);
             }
             catch (Exception ex)
             {

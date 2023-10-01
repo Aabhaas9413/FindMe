@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ISearchService, SearchService>();
 builder.Services.AddSingleton(typeof(IGetData<>), typeof(DataAccessFromJSON<>));
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -20,7 +21,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseHttpsRedirection();
 
 app.ConfigureApi();
