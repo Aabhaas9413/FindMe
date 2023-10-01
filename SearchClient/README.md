@@ -1,6 +1,15 @@
 # SearchClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4. This app contains client-side implementation and is used for searching the list of users from the provided list. 
+
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+
+### Node.js (LTS version recommended)
+### npm (usually comes with Node.js)
+### Angular CLI (installed globally)
+
+Following are the commands that will help in setting up:
 
 ## Development server
 
