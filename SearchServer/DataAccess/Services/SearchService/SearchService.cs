@@ -1,16 +1,20 @@
 ﻿using DataAccess.Common.Interface;
 using DataAccess.Common.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccess.Services.SearchService
 {
     public class SearchService : ISearchService
     {
+        private const string Key = "FilePath";
         private readonly IGetData<List<User>> _getData;
-        private const string jsonFilePath = "C:\\Users\\aabha\\OneDrive\\Desktop\\FindMe\\SearchServer\\DataAccess\\Common\\Assets\\data.json";
-        public SearchService(IGetData<List<User>> getData)
+        private readonly string jsonFilePath;
+        private readonly IConfiguration _config;
+        public SearchService(IGetData<List<User>> getData, IConfiguration config)
         {
-
             _getData = getData;
+            _config = config;
+            jsonFilePath = _config.GetSection(Key)?.Value;
         }
 
         public Task<List<User>?> GetAllResults()

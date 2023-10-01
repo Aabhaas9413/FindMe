@@ -6,15 +6,15 @@ This .NET 6 solution provides a full-text search functionality based on a given 
 
 ## Acceptance Criteria
 
-- Given a search term of “James,” when I enter the search term into the search input and click the ‘Search’ button, then the search results should include the records for “James Kubu” and “James Pfieffer.”
+- Given a search term of ï¿½James,ï¿½ when I enter the search term into the search input and click the ï¿½Searchï¿½ button, then the search results should include the records for ï¿½James Kubuï¿½ and ï¿½James Pfieffer.ï¿½
 
-- Given a search term of “jam,” when I enter the search term into the search input and click the ‘Search’ button, then the search results should include the records for “James Kubu,” “James Pfieffer,” and “Chalmers Longfut.”
+- Given a search term of ï¿½jam,ï¿½ when I enter the search term into the search input and click the ï¿½Searchï¿½ button, then the search results should include the records for ï¿½James Kubu,ï¿½ ï¿½James Pfieffer,ï¿½ and ï¿½Chalmers Longfut.ï¿½
 
-- Given a search term of “Katey Soltan,” when I enter the search term into the search input and click the ‘Search’ button, then the search results should include only the record for “Katey Soltan.”
+- Given a search term of ï¿½Katey Soltan,ï¿½ when I enter the search term into the search input and click the ï¿½Searchï¿½ button, then the search results should include only the record for ï¿½Katey Soltan.ï¿½
 
-- Given a search term of “Jasmine Duncan,” when I enter the search term into the search input and click the ‘Search’ button, then no results should be returned.
+- Given a search term of ï¿½Jasmine Duncan,ï¿½ when I enter the search term into the search input and click the ï¿½Searchï¿½ button, then no results should be returned.
 
-- Given an empty search term, when I click the ‘Search’ button, I should be notified that I did not provide a search input, and no results should be returned.
+- Given an empty search term, when I click the ï¿½Searchï¿½ button, I should be notified that I did not provide a search input, and no results should be returned.
 
 ## Prerequisites
 
@@ -30,6 +30,7 @@ Follow these steps to set up and run the .NET 6 solution:
 1) Clone the repository https://github.com/Aabhaas9413/FindMe.
 2) In folder Search server open https://github.com/Aabhaas9413/FindMe/blob/master/SearchServer/SearchServer.sln. You can use visual studio 2022 to open and run the solution.
 3) The startup project should be SearchAPI.csproj.
+4) Please configure the path of the file where the data has been placed in the app.setting.json under the key "FilePath".
 
 
 ## Testing

@@ -1,6 +1,7 @@
 using DataAccess.Common.Interface;
 using DataAccess.Common.Models;
 using DataAccess.Services.SearchService;
+using Microsoft.Extensions.Configuration;
 using Moq;
 
 namespace DataAccessTests
@@ -9,10 +10,14 @@ namespace DataAccessTests
     {
         private readonly Mock<IGetData<List<User>>> mockDataService;
         private readonly ISearchService searchService;
+        private const string Key = "FilePath";
+        private const string expectedPathValue = "C:\\Users\\aabha\\OneDrive\\Desktop\\FindMe\\SearchServer\\DataAccess\\Common\\Assets\\data.json";
         public SearchDataServiceTests()
         {
+            var mockConfiguration = new Mock<IConfiguration>();
+            mockConfiguration.Setup(x => x[Key]).Returns(expectedPathValue);
             mockDataService = new Mock<IGetData<List<User>>>();
-            searchService = new SearchService(mockDataService.Object);
+            searchService = new SearchService(mockDataService.Object, mockConfiguration.Object);
         }
 
         [Fact]

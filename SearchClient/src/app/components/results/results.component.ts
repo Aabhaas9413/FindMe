@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ResultsComponent {
   }
 
   getUserListByKeyword(keyword : string){
-   this.searchService.getSearchedUserList(keyword).subscribe((userRes:any[]) => {
+   this.searchService.getSearchedUserList(keyword.trim()).subscribe((userRes:any[]) => {
     this.text = keyword;
     if(userRes.length > 0){      
       this.userList = userRes;
