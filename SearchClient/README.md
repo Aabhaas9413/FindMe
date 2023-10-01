@@ -4,10 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
+1) Node.js (LTS version recommended)
+2) npm (usually comes with Node.js)
+3) Angular CLI (installed globally)
 
-### Node.js (LTS version recommended)
-### npm (usually comes with Node.js)
-### Angular CLI (installed globally)
+Following are the commands that will help in setting up:
 
 ## Development server
 
