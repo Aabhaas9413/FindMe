@@ -11,11 +11,11 @@ namespace SearchServer.Controller
             app.MapGet("getSearchResults/{keyword}", GetSearchResults);
         }
 
-        private static IResult GetAllData(ISearchService data)
+        private async static Task<IResult> GetAllData(ISearchService data)
         {
             try
             {
-                var results = data.GetAllResults();
+                var results = await data.GetAllResults();
 
                 if (results == null) { return Results.NotFound(); }
                 return Results.Ok(results);
@@ -26,14 +26,14 @@ namespace SearchServer.Controller
             }
         }
 
-        private static IResult GetSearchResults(string keyword, ISearchService data)
+        private async static Task<IResult> GetSearchResults(string keyword, ISearchService data)
         {
             try
             {
-                var results = data.GetSearchResults(keyword);
+                var results = await data.GetSearchResults(keyword);
 
                 if (results == null) { return Results.NotFound(); }
-                return Results.Ok(results.Result);
+                return Results.Ok(results);
             }
             catch (Exception ex)
             {

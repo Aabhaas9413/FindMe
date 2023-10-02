@@ -17,9 +17,9 @@ namespace DataAccess.Services.SearchService
             jsonFilePath = _config.GetSection(Key)?.Value;
         }
 
-        public Task<List<User>?> GetAllResults()
+        public async Task<List<User>?> GetAllResults()
         {
-            var data = _getData.GetData(jsonFilePath);
+            var data = await _getData.GetData(jsonFilePath);
             return data;
         }
         public async Task<List<User>?> GetSearchResults(string keyword)
